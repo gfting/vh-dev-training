@@ -7,7 +7,7 @@
 let a: number | string = 5;
 let b = 'hello';
 let c = false;
-a = 'hello';
+//a = 'hello';
 // let's talk about why var sucks
 
 // we can (and should, whenever possible) enforce constness
@@ -45,21 +45,21 @@ const hola = function(param: string) {
 };
 
 hello(878734);
-hola(783478734);
+hola('783478734');
 // or this
-const bonjour = param => {
+const bonjour = function(param: string) {
 	console.log(param);
 };
 
 // or this
-const ciao = (param1, param2) => {
+const ciao = (param1: string, param2: string) => {
 	console.log(param1 + param2);
 };
 
 // here's a quick example of a neat thing you can do with function in javascript. This is called a callback!
 
-const ola = (param, func) => {
-	func(param, 7); // expecting two parameters
+const ola = (param: string, callback: Function) => {
+	callback(param, 7); // expecting two parameters
 };
 
 // ola(2, (param1, param2) => {
