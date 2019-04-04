@@ -1,12 +1,39 @@
 {
 	"compilerOptions": {
 		"module": "commonjs",
+		"allowJs": true,
 		"allowSyntheticDefaultImports": true,
-		"baseUrl": ".",
-		"paths": { "*": ["types/*", "node_modules"] },
+		"emitDecoratorMetadata": true,
 		"esModuleInterop": true,
-		"target": "es2015",
-		"lib": ["es2015"],
-		"strict": true
+		"experimentalDecorators": true,
+		"isolatedModules": false,
+		"jsx": "react",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"strict": true,
+		"target": "es6",
+		"lib": [
+			"es5",
+			"es6",
+			"dom",
+			"es2015",
+			"es2015.core",
+			"es2015.collection",
+			"es2015.generator",
+			"es2015.iterable",
+			"es2015.promise",
+			"es2015.proxy",
+			"es2015.reflect",
+			"es2015.symbol",
+			"es2015.symbol.wellknown",
+			"esnext.asynciterable",
+			"es2017.object",
+			"es2017"
+		],
+		"outDir": "dist",
+		"baseUrl": ".",
+		"paths": {
+			"*": ["node_modules/*"]
+		}
 	}
 }
