@@ -1,15 +1,26 @@
 /* eslint-disable */ // just to prevent it from annoying us forever
 import fetch from 'node-fetch';
-import { SpotPerson } from './hw-solution';
+
+// This is means that we can define types for the whole file; export means that you're exporting a single object from the module
+export interface SpotPerson {
+	name: string;
+	score: number;
+	spots: number;
+	spotted: number;
+	invalidated: number;
+	unique: number;
+	id: string;
+}
 
 // to call this function, you'll need to do two things
 // 1st, the function that is called in must have the keyword "async" before the parameters
 // 2nd when you call it, you must preface it with "await"
 // like in the below example
+// this part with Promise<SpotPerson[]>
 const getDataFromAPI = (url: string): Promise<SpotPerson[]> =>
 	new Promise((res, rej) => {
 		fetch(url)
-			.then(data => data.json())
+			.then(data => data.json()) // these are parts of a promise chain
 			.then(json => {
 				// the json variable here is just the stuff you see in the browser
 				res(json);
@@ -46,8 +57,8 @@ const awry = async (): Promise<void> => {
 };
 
 (async () => {
-	// objectively();
-	// awry();
+	objectively();
+	awry();
 })();
 
 //console.log(docTester); // uncomment this to see the array logged
